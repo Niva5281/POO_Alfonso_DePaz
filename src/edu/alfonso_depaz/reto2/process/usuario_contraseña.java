@@ -1,6 +1,6 @@
 package edu.alfonso_depaz.reto2.process;
 import java.util.Scanner;
-import java.util.Arrays
+import java.util.Arrays;
 //**esta clase es la que ejecuta el programa completo
 //**empezamos declarando el array dirigido al constructor, el constructor se declara mas adelante
 public class usuario_contraseña {
