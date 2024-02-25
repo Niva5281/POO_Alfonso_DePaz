@@ -33,9 +33,8 @@ public class Medicamento {
                                       String nombre_generico,
                                       String nombre_registrado,
                                       String precio_publico,
-                                      String forma_farmaceutica){
-
-        Parametros_medicamento parametros_medicamento = new Parametros_medicamento(nombre_registrador, fecha, nombre_quimico, nombre_generico, nombre_registrado, precio_publico, forma_farmaceutica);
+                                      String forma_farmaceutica,){
+        Parametros_medicamento parametros_medicamento = new Parametros_medicamento(nombre_registrador,fecha,nombre_quimico,nombre_generico,nombre_registrado,precio_publico,forma_farmaceutica)
     }
     public static void registrar_parametrosMedicamento() {
         Scanner scanner = new Scanner(System.in);
@@ -69,7 +68,7 @@ public class Medicamento {
             String forma_farmaceutica=respuesta;
             System.out.println("Lista de medicamentos:"+Medicamento+"regisstrado exitosamente");
             registrarMedicamentos(nombre_registrador,fecha,nombre_quimico,nombre_generico,nombre_registrado,
-                    precio_publico,forma_farmaceutica);
+                    precio_publico,forma_farmaceutica, precio_venta);
         }
     }
     public void condicional_FIN(String respuesta){

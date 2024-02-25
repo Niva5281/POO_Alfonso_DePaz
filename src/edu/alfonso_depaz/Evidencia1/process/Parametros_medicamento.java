@@ -9,15 +9,23 @@ public class Parametros_medicamento {
     public String nombre_generico;
     public String nombre_registrado;
     public double precio_publico;
-    public double precio_venta;
+    public double precio_venta = calcular_precioVenta();
     public String forma_farmaceutica;
 
-    public Parametros_medicamento() {
+    public Parametros_medicamento(String nombre_registrador,
+                                  String fecha,
+                                  String nombre_quimico,
+                                  String nombre_generico,
+                                  String nombre_registrado,
+                                  double precio_publico,
+                                  double precio_venta,
+                                  String forma_farmaceutica){
+        this.nombre_registrador=nombre_registrador;
+        this.fecha=fecha;
         this.nombre_quimico = nombre_quimico;
         this.nombre_generico = nombre_generico;
         this.nombre_registrado = nombre_registrado;
         this.precio_publico = precio_publico;
-        this.precio_venta = calcular_precioVenta();
         this.forma_farmaceutica = forma_farmaceutica;
     }
 
