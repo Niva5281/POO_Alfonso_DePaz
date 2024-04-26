@@ -5,7 +5,7 @@ import edu.alfonso_depaz.Reto6.data.Empleados;
 import edu.alfonso_depaz.Reto6.process.Lista_empleados;
 
 public class CLI {
-    public static void main(String[] args){
+    public static void ella(){
         show_Menu();
     }
     public static void show_Menu(){
