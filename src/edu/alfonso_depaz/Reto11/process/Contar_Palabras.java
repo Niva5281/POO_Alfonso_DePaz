@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Contar_Palabras {
-    public static String contar(String [] palabras){
+    public static String[] contar(String [] palabras){
         Map<String, Integer> frecuencias = new HashMap<>();
         for (String palabra : palabras) {
             frecuencias.put(palabra, frecuencias.getOrDefault(palabra, 0) + 1);
         }
-        return Arrays.toString(frecuencias.keySet().toArray(new String[0]));
+        return frecuencias.keySet().toArray(new String[0]);
     }
 }

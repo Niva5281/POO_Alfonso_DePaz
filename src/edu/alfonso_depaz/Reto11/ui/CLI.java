@@ -3,14 +3,11 @@ package edu.alfonso_depaz.Reto11.ui;
 import java.util.Scanner;
 
 import edu.alfonso_depaz.Reto11.process.*;
-import edu.alfonso_depaz.Reto9.process.Contar_Palabras;
-import edu.alfonso_depaz.Reto9.process.LeerTexto;
-import edu.alfonso_depaz.Reto9.process.Depurar;
-import edu.alfonso_depaz.Reto9.process.Separar;
-import edu.alfonso_depaz.Reto9.process.Ordenar;
-import edu.alfonso_depaz.Reto9.ui.English;
-import edu.alfonso_depaz.Reto9.ui.Español;
-import edu.alfonso_depaz.Reto9.ui.Idioma;
+import edu.alfonso_depaz.Reto11.process.Contar_Palabras;
+import edu.alfonso_depaz.Reto11.process.LeerTexto;
+import edu.alfonso_depaz.Reto11.process.Depurar;
+import edu.alfonso_depaz.Reto11.process.Separar;
+import edu.alfonso_depaz.Reto11.process.Ordenar;
 
 public class CLI {
     public static void main(String[] args) {
@@ -33,7 +30,7 @@ public class CLI {
         while (true) {
             System.out.println(id.get_SeleccionarLibro());
             for (int i = 0; i < Libros.length; i++) {
-                System.out.println((i + 1) + "." + Libros(i));
+                System.out.println((i + 1) + ". " + Libros[i]);
             }
             int Opt = scanner.nextInt();
             if (Opt == 0) {

@@ -1,7 +1,4 @@
 package edu.alfonso_depaz.Reto11.ui;
-
-import edu.alfonso_depaz.Reto9.ui.Idioma;
-
 public class Español extends Idioma {
     @Override
     public String Bienvenido() {
