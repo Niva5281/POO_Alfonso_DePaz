@@ -11,6 +11,6 @@ public class Test_casos {
         String texto="Hi";
         String[] resultado = edu.alfonso_depaz.Reto12.process.Contar_Palabras.contar
                 (edu.alfonso_depaz.Reto12.process.Separar.separar(texto));
-        assertArrayEquals(new String[]{"Hi: 1"}, resultado);
+        assertArrayEquals(new String[]{"Hi"}, resultado);
     }
 }

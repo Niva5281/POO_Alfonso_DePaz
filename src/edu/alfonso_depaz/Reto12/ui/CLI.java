@@ -69,7 +69,7 @@ public class CLI {
         String palabraMasLarga = Palabra_larga.palabra_larga(words);
         System.out.println("Palabra más larga: " + palabraMasLarga);
 
-        String[] palabrasLetraImpar = Palabras_impares.palabras_Impares(words);
+        String[] palabrasLetraImpar = Palabras_impares.palabras_impares(words);
         System.out.println("Palabras con número impar de letras: ");
         for (String palabra : palabrasLetraImpar) {
             System.out.print(palabra + " ");
