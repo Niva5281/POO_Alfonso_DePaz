@@ -1,6 +1,10 @@
 package edu.alfonso_depaz.MiJuego1.ui;
 
+import edu.alfonso_depaz.MiJuego1.process.CaracteresJugadores;
 import edu.alfonso_depaz.MiJuego1.process.Jugadores;
+import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodo_RegistroDatos_Jugador1;
+import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodo_RegistroDatos_Jugador2;
+import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodos_Jugadores;
 
 import java.util.Scanner;
 
@@ -12,6 +16,9 @@ public class CLI {
      */
     //En main se hacen todas las operaciones de entradas y salidas del usuario
     public static void main(String [] args){
+        CLI.Menu();
+    }
+    public static void Menu(){
         //Se le pregunta al usuario el modo de juego a escojer y se va a ese apartado
         Scanner scanner=new Scanner(System.in);
         Idioma lenguaje=Seleccion_Idioma(scanner);
@@ -47,67 +54,100 @@ public class CLI {
     public static void Registrar_JugadoresGeneral(Idioma lenguaje){
         //Se invoca el objeto para utilizar los metodos de la clase
         CLI metodo = new CLI();
-        //Se invoca el scanner el registro de datos proporcionados por el usuario
-        Scanner scanner = new Scanner(System.in);
-        //Se hace el proceso de registro de nombres de los usuarios
-        System.out.println(lenguaje.get_Entrada_Nombre_Jg_Uno());
-        String jugador1=scanner.nextLine();
-        System.out.println(lenguaje.get_Salida_Confirmación_CaracterRegistrado()+jugador1);
+        //Se invocan variables para su registro
+        String NombreJugador1 = null;
+        String NombreJugador2 =null;
+        String CaracterJugador1 = null;
+        String CaracterJugador2 = null;
+        //Se invoca el objeto de los metodos para llamar metodos con cada jugador
 
-        System.out.println(lenguaje.get_Entrada_Nombre_Jg_Dos());
-        String jugador2=scanner.nextLine();
-        System.out.println(lenguaje.get_Salida_Confirmación_CaracterRegistrado()+jugador2);
+        /**
+         * Objetivo:
+         */
+        Metodos_Jugadores metodosJugadores;
 
-        Jugadores jugadores= new Jugadores(jugador1,jugador2);
-        jugadores.setJg1_Nombre(jugador1);
-        jugadores.setJg2_Nombre(jugador2);
+        //Se apunta al jugador 1
+        metodosJugadores=new Metodo_RegistroDatos_Jugador1();
+
+        //Se llama al metodo donde se ejecutan todas las acciones necesarias y por ultimo regresa su "valor"
+        NombreJugador1=metodo.Registrar_Jugador1(NombreJugador1,lenguaje,metodosJugadores);
+
+        //Ahora se apunta al jugador 2
+        metodosJugadores=new Metodo_RegistroDatos_Jugador2();
+
+        //Se llama al metodo donde se ejecutan todas las acciones necesarias y por utlimo regresa su "valor"
+        NombreJugador2=metodo.Registrar_Jugador2(NombreJugador2,lenguaje,metodosJugadores);
+
+        //Se imprime la lista de caracteres disponibles
+        System.out.println(lenguaje.mostrar_Salida_CaracteresDeTicTacToe());
+
+        //Se vuelve a apuntar al jugador 1
+        metodosJugadores=new Metodo_RegistroDatos_Jugador1();
+
+        //Se llama al metodo donde se ejecutan todas las acciones necesarias y por utlimo regresa su "valor"
+        CaracterJugador1= metodo.Registrar_CaracterJugador1(CaracterJugador1,lenguaje,metodosJugadores);
+
+        //Se vuelve a apuntar al jugador 2
+        metodosJugadores=new Metodo_RegistroDatos_Jugador2();
+
+        //Se llama al metodo donde se ejecutan todas las acciones necesarias y por utlimo regresa su "valor"
+        CaracterJugador2= metodo.Registrar_CaracterJugador2(CaracterJugador2,lenguaje,metodosJugadores);
+
+        //Se agregan los datos al constructor de jugadores con setters
+        Jugadores jugadores= new Jugadores(NombreJugador1, NombreJugador2);
+        jugadores.setJg1_Nombre(NombreJugador1);
+        jugadores.setJg2_Nombre(NombreJugador2);
+
+        //Se agregan los datos al constructor de caracteres con setters
+        CaracteresJugadores caracteresJugadores = new CaracteresJugadores(CaracterJugador1,CaracterJugador2);
+        caracteresJugadores.setJg1_Crt(CaracterJugador1);
+        caracteresJugadores.setJg2_Crt(CaracterJugador2);
+
         System.out.println("***********************");
         System.out.println("Player 1: "+jugadores.getJg1_Nombre());
         System.out.println("Player 2: "+jugadores.getJg2_Nombre());
+        System.out.println("Caracter-Player 1: "+caracteresJugadores.getJg1_Crt());
+        System.out.println("Caracter-Player 2: "+caracteresJugadores.getJg2_Crt());
         System.out.println("***********************");
-        //Se hace el proceso de registro de caracteres correspondiendo a cada uno de los jugadores
-        System.out.println(lenguaje.mostrar_Salida_CaracteresDeTicTacToe());
-        System.out.println(lenguaje.get_Entrada_CaracteresDeTicTacToe_Jg_Uno());
-        String Caracter_Jg_1= scanner.next();
-
-        do while(){
-
-        }
-        Caracter_Jg_1=metodo.RegistrarCaracteresJugadores(Caracter_Jg_1, lenguaje);
-        System.out.println(lenguaje.get_Salida_Confirmación_CaracterRegistrado()+Caracter_Jg_1);
-
-        System.out.println(lenguaje.get_Entrada_CaracteresDeItcTacToe_Jg_Dos());
-        String Caracter_Jg_2=scanner.next();
-        Caracter_Jg_2=metodo.RegistrarCaracteresJugadores(Caracter_Jg_2, lenguaje);
-        System.out.println(lenguaje.get_Salida_Confirmación_CaracterRegistrado()+Caracter_Jg_2);
     }
-    public String RegistrarCaracteresJugadores(String opcion, Idioma lenguaje){
-        if(opcion.equalsIgnoreCase("a")){
-            opcion="X";
-        }else if(opcion.equalsIgnoreCase("b")){
-            opcion="O";
-        } else if (opcion.equalsIgnoreCase("c")) {
-            opcion="†";
-        }else if (opcion.equalsIgnoreCase("d")) {
-            opcion = "∑";
-        }else if (opcion.equalsIgnoreCase("e")) {
-            opcion = "";
-        }else if (opcion.equalsIgnoreCase("f")) {
-            opcion = "©";
-        }else if (opcion.equalsIgnoreCase("g")) {
-            opcion = "§";
-        }else if (opcion.equalsIgnoreCase("h")) {
-            opcion = "€";
-        }else if (opcion.equalsIgnoreCase("i")) {
-            opcion = "W";
-        }else if (opcion.equalsIgnoreCase("j")) {
-            opcion = "Z";
-        }else{
-            System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
-        }
+
+    /**
+     *Se agregan metodos para el modo de juego "Jugador_VS_Jugador
+     *
+     * Objetivo:Mantener orden
+     */
+
+    public String Registrar_Jugador1(String jugador, Idioma lenguaje, Metodos_Jugadores metodosJugadores){
+        //Se imprime mensaje para registrar el jugador 1
+        System.out.println(lenguaje.get_Entrada_Nombre_Jg_Uno());
+        //Se ejecuta el metodo leyendolo y regresando su "valor"
+        jugador=metodosJugadores.Guardar_NombresJugadores(jugador);
+        //Se regresa su valor
+        return jugador;
+    }
+    public String Registrar_Jugador2(String jugador, Idioma lenguaje, Metodos_Jugadores metodosJugadores){
+        //Se imprime mensaje para registrar el jugador 2
+        System.out.println(lenguaje.get_Entrada_Nombre_Jg_Dos());
+        //Se ejecuta el metodo leyendolo y regresando su "valor"
+        jugador=metodosJugadores.Guardar_NombresJugadores(jugador);
+        //Se regresa su valor
+        return jugador;
+    }
+    public String Registrar_CaracterJugador1(String opcion, Idioma lenguaje, Metodos_Jugadores metodosJugadores){
+        //Se imprime mensaje para leer la opcion del jugador 1
+        System.out.println(lenguaje.get_Entrada_CaracteresDeTicTacToe_Jg_Uno());
+        //Se ejecuta el metodo leyendolo y regresando su "valor"
+        opcion=metodosJugadores.Guardar_CaracteresJugadores(opcion);
         return opcion;
     }
-    //Metodo donde guarda la opcion para seleccionar el caracter (Numero) y regresa el caracter seleccionado
+    public String Registrar_CaracterJugador2(String opcion, Idioma lenguaje, Metodos_Jugadores metodosJugadores){
+        //Se imprime mensaje para leer la opcion del jugador 2
+        System.out.println(lenguaje.get_Entrada_CaracteresDeTicTacToe_Jg_Dos());
+        //Se ejecuta el metodo leyendolo y regresando su "valor"
+        opcion=metodosJugadores.Guardar_CaracteresJugadores(opcion);
+        //Se imprime el valor guardado
+        return opcion;
+    }
     //Modo de juego de jugador contra jugador donde se utilizan todos los metodos requeridos para su modo de juego
     public static void Jugador_VS_Jugador(Idioma lenguaje){
         System.out.println(lenguaje.get_Salida_Bienvenida_ModoDeJuego_JgVSJg());

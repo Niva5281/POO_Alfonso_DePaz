@@ -9,11 +9,6 @@ public class Jugadores {
         Jg1_nombreConstructor=Jg1_Nombre;
         Jg2_NombreConstructor=Jg2_Nombre;
     }
-    public static String ReigstrarJugador2(String Jugador){
-        Scanner scanner = new Scanner(System.in);
-        Jugador=scanner.nextLine();
-        return Jugador;
-    }
     public String getJg1_Nombre(){
         return Jg1_Nombre;
     }

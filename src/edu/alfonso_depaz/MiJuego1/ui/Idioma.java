@@ -7,7 +7,7 @@ public abstract class Idioma {
     public abstract String get_Entrada_ModoDeJuego();
     public abstract String mostrar_Salida_CaracteresDeTicTacToe();
     public abstract String get_Entrada_CaracteresDeTicTacToe_Jg_Uno();
-    public abstract String get_Entrada_CaracteresDeItcTacToe_Jg_Dos();
+    public abstract String get_Entrada_CaracteresDeTicTacToe_Jg_Dos();
     public abstract String get_Entrada_Nombre_Jg_Uno();
     public abstract String get_Entrada_Nombre_Jg_Dos();
     public abstract String get_Salida_Error_CaracterInvalido();

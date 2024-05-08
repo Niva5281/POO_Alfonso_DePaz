@@ -50,7 +50,7 @@ public class English extends Idioma{
     }
 
     @Override
-    public String get_Entrada_CaracteresDeItcTacToe_Jg_Dos() {
+    public String get_Entrada_CaracteresDeTicTacToe_Jg_Dos() {
         return "Characters for the player 2:";
     }
 

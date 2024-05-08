@@ -53,13 +53,13 @@ public class Español extends Idioma{
     }
 
     @Override
-    public String get_Entrada_CaracteresDeItcTacToe_Jg_Dos() {
+    public String get_Entrada_CaracteresDeTicTacToe_Jg_Dos() {
         return "Caracteres para el jugador 2:";
     }
 
     @Override
     public String get_Entrada_Nombre_Jg_Uno() {
-        return "Nombre del juegador 1?";
+        return "Nombre del jugador 1?";
     }
 
     @Override
