@@ -107,4 +107,24 @@ public class Español extends Idioma{
         return "Regresando al menu";
     }
 
+    @Override
+    public String get_Error_JugadoresIguales() {
+        return "Nombres Jugadores Iguales, porfavor no introduzca los mismos nombres";
+    }
+
+    @Override
+    public String get_Entrada_CambiarNombreJugadorV() {
+        return "¿Cual jugador desea cambiar? 1/2";
+    }
+
+    @Override
+    public String get_Error_CaracteresIguales() {
+        return "Caracteres de jugadores iguales, porfavor introduzca diferentes caracteres";
+    }
+
+    @Override
+    public String get_Entrada_CambiarCaracterJugador() {
+        return "¿Cual caracter del jugador desea cambiar? 1/2";
+    }
+
 }

@@ -103,4 +103,24 @@ public class English extends Idioma{
     public String get_Salida_RegresarMenu() {
         return "Returning to menu";
     }
+
+    @Override
+    public String get_Error_JugadoresIguales() {
+        return "Same Player Names, please do not enter the same names";
+    }
+
+    @Override
+    public String get_Entrada_CambiarNombreJugadorV() {
+        return "Which player do you want to change? 1/2";
+    }
+
+    @Override
+    public String get_Error_CaracteresIguales() {
+        return "Same player characters, please enter different characters";
+    }
+
+    @Override
+    public String get_Entrada_CambiarCaracterJugador() {
+        return "Which player character do you want to change? 1/2";
+    }
 }

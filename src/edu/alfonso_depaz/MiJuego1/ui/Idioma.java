@@ -18,4 +18,8 @@ public abstract class Idioma {
     public abstract String get_Salida_FinalizarPrograma();
     public abstract String get_Salida_FinalizandoJuego();
     public abstract String get_Salida_RegresarMenu();
+    public abstract String get_Error_JugadoresIguales();
+    public abstract String get_Entrada_CambiarNombreJugadorV();
+    public abstract String get_Error_CaracteresIguales();
+    public abstract String get_Entrada_CambiarCaracterJugador();
 }
