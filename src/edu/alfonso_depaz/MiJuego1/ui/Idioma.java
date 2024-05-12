@@ -22,4 +22,7 @@ public abstract class Idioma {
     public abstract String get_Entrada_CambiarNombreJugadorV();
     public abstract String get_Error_CaracteresIguales();
     public abstract String get_Entrada_CambiarCaracterJugador();
+    public abstract String get_Salida_Empate();
+    public abstract String get_Salida_Ganador();
+    public abstract String get_Salida_JugarOtraVez();
 }

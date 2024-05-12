@@ -123,4 +123,23 @@ public class English extends Idioma{
     public String get_Entrada_CambiarCaracterJugador() {
         return "Which player character do you want to change? 1/2";
     }
+
+    @Override
+    public String get_Salida_Empate() {
+        return "Draw";
+    }
+
+    @Override
+    public String get_Salida_Ganador() {
+        return "Won!";
+    }
+
+    @Override
+    public String get_Salida_JugarOtraVez() {
+        return """
+                Do you want to play again?
+                1. Yes
+                2. Nop
+                """;
+    }
 }

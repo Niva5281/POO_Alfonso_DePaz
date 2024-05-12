@@ -127,4 +127,23 @@ public class Español extends Idioma{
         return "¿Cual caracter del jugador desea cambiar? 1/2";
     }
 
+    @Override
+    public String get_Salida_Empate() {
+        return "Empate";
+    }
+
+    @Override
+    public String get_Salida_Ganador() {
+        return "Gana!";
+    }
+
+    @Override
+    public String get_Salida_JugarOtraVez() {
+        return """
+                Desea jugar otra vez?
+                1. Si
+                2. No
+                """;
+    }
+
 }
