@@ -1,6 +1,6 @@
 package edu.alfonso_depaz.Reto12.test;
 
-import edu.alfonso_depaz.Reto11.process.Palabras_impares;
+import edu.alfonso_depaz.Reto12.process.Palabras_impares;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -14,7 +14,7 @@ public class Test_casos_PalabrasImpares {
     @Test
     public void Test_casos_PalabrasImpares_MuchasPalabras(){
         String []texto={"Alfonso","Gamaliel","Telefono","Daniela"};
-        String [] respuesta = Palabras_impares.palabras_Impares(texto);
+        String [] respuesta = Palabras_impares.palabras_impares(texto);
         assertArrayEquals(new String[]{"Alfonso","Daniela"},respuesta);
     }
 }
