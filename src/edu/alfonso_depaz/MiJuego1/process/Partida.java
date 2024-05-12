@@ -81,7 +81,7 @@ public class Partida {
         //Hecho el filtro, se agregan los datos a los jugadores
         jugador1.setJg_Nombre(jg1);
         jugador1.setCj_Caracter(cj1);
-        jugador2.setCj_Caracter(jg2);
+        jugador2.setJg_Nombre(jg2);
         jugador2.setCj_Caracter(cj2);
 
         System.out.println(jugador1.getJg_Nombre());
