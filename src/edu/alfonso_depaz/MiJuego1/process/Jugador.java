@@ -2,11 +2,11 @@ package edu.alfonso_depaz.MiJuego1.process;
 
 public class Jugador {
     private String Jg_Nombre;
-    private String Cj_Caracter;
+    private char Cj_Caracter;
     private int victorias;
     public Jugador(){
         this.Jg_Nombre="";
-        this.Cj_Caracter="";
+        this.Cj_Caracter=' ';
         this.victorias=0;
     }
     public String getJg_Nombre(){
@@ -15,11 +15,11 @@ public class Jugador {
     public void setJg_Nombre(String nuevoNombre){
         this.Jg_Nombre=nuevoNombre;
     }
-    public String getCj_Caracter(){
+    public char getCj_Caracter(){
         return Cj_Caracter;
     }
 
-    public void setCj_Caracter(String nuevoCaracter){
+    public void setCj_Caracter(char nuevoCaracter){
         this.Cj_Caracter=nuevoCaracter;
     }
     public void aumentarVictorias(){
@@ -27,5 +27,8 @@ public class Jugador {
     }
     public int obtenerVictorias() {
         return victorias;
+    }
+    public void marcarCasilla(int fila, int columna, char[][] tablero) {
+        tablero[fila][columna] = Cj_Caracter;
     }
 }

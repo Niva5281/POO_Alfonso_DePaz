@@ -1,9 +1,9 @@
 package edu.alfonso_depaz.MiJuego1.process;
 import java.util.Random;
 public class CPU {
-    private String simbolo;
-    public CPU(String simbolo) {
-        this.simbolo = simbolo;
+    private char Cj_caracter;
+    public CPU(char simbolo) {
+        this.Cj_caracter = simbolo;
     }
 
     public void marcarCasillaRandom(Tablero tablero) {
@@ -13,6 +13,6 @@ public class CPU {
             fila = rand.nextInt(3);
             columna = rand.nextInt(3);
         } while (!tablero.verificarCasilla(fila, columna));
-        tablero.marcarCasilla(fila, columna, simbolo);
+        tablero.marcarCasilla(fila, columna, Cj_caracter);
     }
 }

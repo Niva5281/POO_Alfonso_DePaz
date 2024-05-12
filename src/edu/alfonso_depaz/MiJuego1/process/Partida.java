@@ -14,17 +14,16 @@ public class Partida {
     private Jugador jugador1;
     private Jugador jugador2;
     private Tablero tablero;
-    private String turno;
+    private char turno;
     private CPU cpu;
     public Partida(){
         this.jugador1 = new Jugador();
         this.jugador2 = new Jugador();
         this.tablero = new Tablero();
-        this.turno = "";
-        this.cpu = new CPU("O");
+        this.turno = ' ';
+        this.cpu = new CPU('O');
     }
     public void inicializar(Scanner scanner, Idioma lenguaje) {
-        // Jugador 1
         //Se invoca el metodo y apunta al jugador 1
         CLI cli=new CLI();
         Metodos_Jugadores metodosJugadores=new Metodo_RegistroDatos_Jugador1_V1();
@@ -63,7 +62,7 @@ public class Partida {
         String cj2=null;
         cj2= metodosJugadores.Guardar_CaracteresJugadores_V1(cj2,lenguaje);
 
-        while(cj1.equals(cj2)){
+        while(cj1==cj2){
             scanner=new Scanner(System.in);
             System.out.println(lenguaje.get_Error_CaracteresIguales());
             System.out.println(lenguaje.get_Entrada_CambiarCaracterJugador());
@@ -78,11 +77,16 @@ public class Partida {
                 System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
             }
         }
+        //Se cambian las variables de caracteres por tipo char
+
+        char cj1_char=cj1.charAt(0);
+        char cj2_char=cj2.charAt(0);
+
         //Hecho el filtro, se agregan los datos a los jugadores
         jugador1.setJg_Nombre(jg1);
-        jugador1.setCj_Caracter(cj1);
+        jugador1.setCj_Caracter(cj1_char);
         jugador2.setJg_Nombre(jg2);
-        jugador2.setCj_Caracter(cj2);
+        jugador2.setCj_Caracter(cj2_char);
 
         System.out.println(jugador1.getJg_Nombre());
         System.out.println(jugador1.getCj_Caracter());
@@ -96,13 +100,13 @@ public class Partida {
     public void realizarJugada(Scanner scanner, CLI cli) {
         Jugador jugadorActual = turno == jugador1.getCj_Caracter() ? jugador1 : jugador2;
         tablero.mostrar();
-        System.out.println("Turno de " + jugadorActual.getJg_Nombre() + " (" + jugadorActual.getCj_Caracter() + ")");
+        System.out.println("Turno de " + jugadorActual.getCj_Caracter() + " (" + jugadorActual.getCj_Caracter() + ")");
         if (jugadorActual == jugador1) {
             System.out.println("Choose row and column / Elige fila y columna (e.g., 1 2):"); // Agregamos un mensaje explicativo
             int fila = scanner.nextInt();
             int columna = scanner.nextInt();
             if (tablero.verificarCasilla(fila, columna)) {
-                tablero.marcarCasilla(fila, columna,jugadorActual.getCj_Caracter());
+                tablero.marcarCasilla(fila, columna, jugadorActual.getCj_Caracter());
                 turno = jugador2.getCj_Caracter();
             } else {
                 System.out.println("That cell is already occupied / Esa celda ya está ocupada");

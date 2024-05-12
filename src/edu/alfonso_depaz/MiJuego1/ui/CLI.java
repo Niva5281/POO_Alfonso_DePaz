@@ -4,6 +4,7 @@ import edu.alfonso_depaz.MiJuego1.process.Partida;
 import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodo_RegistroDatos_Jugador1_V1;
 import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodos_Jugadores;
 
+import java.sql.Wrapper;
 import java.util.Scanner;
 
 public class CLI {
@@ -79,12 +80,10 @@ public class CLI {
     //Modo de juego de jugador contra CPU donde se utilizan todos los metodos requeridos para su modo de juego
     public static void Jugador_VS_CPU(Idioma lenguaje){
         System.out.println(lenguaje.get_Salida_Bienvenida_ModoDeJuego_JgVSCPU());
-
-        Metodos_Jugadores metodosJugadores=new Metodo_RegistroDatos_Jugador1_V1();
-        String jg1=null;
-        jg1=CLI.leerJg1(jg1,metodosJugadores,lenguaje);
-        System.out.println(lenguaje.get_Salida_Confirmación_CaracterRegistrado()+jg1);
-        String cj1=null;
-        cj1=CLI.leerCj1(cj1,metodosJugadores, lenguaje);
+        Scanner scanner=new Scanner(System.in);
+        CLI cli=new CLI();
+        Partida partida=new Partida();
+        System.out.println(lenguaje.get_Salida_Bienvenida_ModoDeJuego_JgVSJg());
+        partida.jugar(scanner, cli,lenguaje);
     }
 }
