@@ -17,7 +17,10 @@ public class English extends Idioma{
                 Chose your game mode...
                 
                 1. Player vs Player
+                
                 2. Player vs CPU
+                
+                3. Show hall of fame
                 
                 ///////////////////////////////////////////////////////////
                 """;
@@ -141,5 +144,51 @@ public class English extends Idioma{
                 1. Yes
                 2. Nop
                 """;
+    }
+
+    @Override
+    public String get_Salida_TurnoDe() {
+        return "Turn of: ";
+    }
+
+    @Override
+    public String get_Salida_EscojerFilasyColumnas() {
+        return """
+                //////////////////////////////////////////////
+                
+                Next, put your rows and columns...
+                
+                //////////////////////////////////////////////
+                """;
+    }
+
+    @Override
+    public String get_Entrada_ObtenerFilas() {
+        return "Rows?";
+    }
+
+    @Override
+    public String get_Entrada_ObtenerColumnas() {
+        return "Columns?";
+    }
+
+    @Override
+    public String get_Salida_CeldaOcupada() {
+        return "The cell is occupied";
+    }
+
+    @Override
+    public String get_Salida_SalonFamaVacio() {
+        return "The Hall of Fame is empty";
+    }
+
+    @Override
+    public String get_Salida_SalonFama() {
+        return "Hall of Fame...";
+    }
+
+    @Override
+    public String get_Salida_Victorias() {
+        return " Victories";
     }
 }

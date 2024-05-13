@@ -1,11 +1,11 @@
 package edu.alfonso_depaz.MiJuego1.ui;
 
-public class Español extends Idioma{
+public class Nihongo extends Idioma{
 
     @Override
     public String get_Bienvenida() {
         return """
-               Bienvenido al juego de TIC TAC TOE
+               TIC TAC TOE ゲームへようこそ
                """;
     }
 
@@ -14,13 +14,11 @@ public class Español extends Idioma{
         return """
                ///////////////////////////////////////////////////////////
                
-               Modo de juego?
+               ゲームモード？
                
-               1. Jugador vs Jugador
+               1. プレイヤー対プレイヤー
                
-               2. Jugador vs CPU
-               
-               3. Mostrar salon de la fama
+               2. プレイヤー対 CPU
                
                ///////////////////////////////////////////////////////////
                """;
@@ -31,15 +29,15 @@ public class Español extends Idioma{
         return """
                 ///////////////////////////////////////////////////////////
                 
-                Estos son los caracteres para
-                marcar las casillas del "Tic Tac Toe"
+                これらは
+                チックタックトゥ」のボックスをマークする文字です"
                 
                 A. X
                 B. O
                 C. †
                 D. ∑
                 E. 
-                F. ©
+                F. ©️
                 G. §
                 H. €
                 I. W
@@ -51,106 +49,106 @@ public class Español extends Idioma{
 
     @Override
     public String get_Entrada_CaracteresDeTicTacToe_Jg_Uno() {
-        return "Caracteres para el jugador 1:";
+        return "「プレイヤー 1 のキャラクター:」:";
     }
 
     @Override
     public String get_Entrada_CaracteresDeTicTacToe_Jg_Dos() {
-        return "Caracteres para el jugador 2:";
+        return "「プレイヤー 2 のキャラクター:」:";
     }
 
     @Override
     public String get_Entrada_Nombre_Jg_Uno() {
-        return "Nombre del jugador 1?";
+        return "「プレイヤー１の名前は？」";
     }
 
     @Override
     public String get_Entrada_Nombre_Jg_Dos() {
-        return "Nombre del jugador 2?";
+        return "「プレイヤー2の名前は？」";
     }
 
     @Override
     public String get_Salida_Error_CaracterInvalido() {
-        return "Caracter invalido";
+        return "「無効な文字です」";
     }
 
     @Override
     public String get_Salida_Bienvenida_ModoDeJuego_JgVSJg() {
-        return "Modo de juego: Jugador Vs Jugador...";
+        return "「ゲームモード: プレイヤー vs プレイヤー...」";
     }
 
     @Override
     public String get_Salida_Bienvenida_ModoDeJuego_JgVSCPU() {
-        return "Modo de juego: Jugador Vs CPU...";
+        return "「ゲームモード: プレイヤー vs CPU...」";
     }
 
     @Override
     public String get_Salida_Confirmación_CaracterRegistrado() {
-        return "Caracter registrado: ";
+        return "「登録キャラクター：」";
     }
 
     @Override
     public String get_Salida_InicioJuego() {
-        return "Inicio del juego";
+        return "「ゲームの始まり」";
     }
 
     @Override
     public String get_Salida_FinalizarPrograma() {
-        return "Para finalizar el programa, ponga FIN en cualquier momento";
+        return "「プログラムを終了するには、いつでもFINを押してください。」";
     }
 
     @Override
     public String get_Salida_FinalizandoJuego() {
-        return "Saliendo del juego";
+        return "「ゲームから離れる」";
     }
 
     @Override
     public String get_Salida_RegresarMenu() {
-        return "Regresando al menu";
+        return "「メニューに戻る」";
     }
 
     @Override
     public String get_Error_JugadoresIguales() {
-        return "Nombres Jugadores Iguales, porfavor no introduzca los mismos nombres";
+        return "「同じプレイヤー名です。同じ名前を入力しないでください。」";
     }
 
     @Override
     public String get_Entrada_CambiarNombreJugadorV() {
-        return "¿Cual jugador desea cambiar? 1/2";
+        return "「どの選手を変更しますか? 1/2」";
     }
 
     @Override
     public String get_Error_CaracteresIguales() {
-        return "Caracteres de jugadores iguales, porfavor introduzca diferentes caracteres";
+        return "「同じプレイヤーのシンボルです。別のシンボルを入力してください」";
     }
 
     @Override
     public String get_Entrada_CambiarCaracterJugador() {
-        return "¿Cual caracter del jugador desea cambiar? 1/2";
+        return "「どのプレイヤーキャラクターを変更しますか? 1/2」";
     }
 
     @Override
     public String get_Salida_Empate() {
-        return "Empate";
+        return "「ネクタイ」";
     }
 
     @Override
     public String get_Salida_Ganador() {
-        return "Gana!";
+        return "「勝て」！";
     }
 
     @Override
     public String get_Salida_JugarOtraVez() {
         return """
-                Desea jugar otra vez?
-                1. Si
-                2. No
+                また遊びたい？
+                1. うん
+                2. いいえ
                 """;
     }
 
     @Override
     public String get_Salida_TurnoDe() {
-        return "Turno de: ";
+        return "「ターン・オブ・ザ・:」: ";
     }
 
     @Override
@@ -158,7 +156,7 @@ public class Español extends Idioma{
         return """
                 //////////////////////////////////////////////
                 
-                A continuación, ponga sus filas y columnas...
+                "次に、行と列を置きます..."
                 
                 //////////////////////////////////////////////
                 """;
@@ -166,31 +164,31 @@ public class Español extends Idioma{
 
     @Override
     public String get_Entrada_ObtenerFilas() {
-        return "Fila?";
+        return "行？";
     }
 
     @Override
     public String get_Entrada_ObtenerColumnas() {
-        return "Columna?";
+        return "カラム？";
     }
 
     @Override
     public String get_Salida_CeldaOcupada() {
-        return "La celda esta ocupada";
+        return "「独房は占拠されています」";
     }
 
     @Override
     public String get_Salida_SalonFamaVacio() {
-        return "El Salón de la Fama está vacío";
+        return "「殿堂は空だ」";
     }
 
     @Override
     public String get_Salida_SalonFama() {
-        return "Hall of Fame...";
+        return "殿堂...";
     }
 
     @Override
     public String get_Salida_Victorias() {
-        return " Victorias";
+        return "勝利";
     }
 }

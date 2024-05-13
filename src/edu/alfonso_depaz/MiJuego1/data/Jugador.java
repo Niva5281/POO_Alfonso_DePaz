@@ -1,4 +1,4 @@
-package edu.alfonso_depaz.MiJuego1.process;
+package edu.alfonso_depaz.MiJuego1.data;
 
 public class Jugador {
     private String Jg_Nombre;

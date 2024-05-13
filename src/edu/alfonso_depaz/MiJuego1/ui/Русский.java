@@ -1,11 +1,11 @@
 package edu.alfonso_depaz.MiJuego1.ui;
 
-public class Español extends Idioma{
+public class Русский extends Idioma{
 
     @Override
     public String get_Bienvenida() {
         return """
-               Bienvenido al juego de TIC TAC TOE
+              Добро пожаловать в игру крестики-нолики
                """;
     }
 
@@ -14,13 +14,11 @@ public class Español extends Idioma{
         return """
                ///////////////////////////////////////////////////////////
                
-               Modo de juego?
+               Игровой режим?
                
-               1. Jugador vs Jugador
+               1. Игрок против Игрока
                
-               2. Jugador vs CPU
-               
-               3. Mostrar salon de la fama
+               2. Игрок против процессора
                
                ///////////////////////////////////////////////////////////
                """;
@@ -31,15 +29,15 @@ public class Español extends Idioma{
         return """
                 ///////////////////////////////////////////////////////////
                 
-                Estos son los caracteres para
-                marcar las casillas del "Tic Tac Toe"
+                Это персонажи для
+                 поставьте галочки напротив «Крестики-нолики»
                 
                 A. X
                 B. O
                 C. †
                 D. ∑
                 E. 
-                F. ©
+                F. ©️
                 G. §
                 H. €
                 I. W
@@ -51,106 +49,106 @@ public class Español extends Idioma{
 
     @Override
     public String get_Entrada_CaracteresDeTicTacToe_Jg_Uno() {
-        return "Caracteres para el jugador 1:";
+        return "«Персонажи для игрока 1:»";
     }
 
     @Override
     public String get_Entrada_CaracteresDeTicTacToe_Jg_Dos() {
-        return "Caracteres para el jugador 2:";
+        return "«Персонажи для игрока 2:»";
     }
 
     @Override
     public String get_Entrada_Nombre_Jg_Uno() {
-        return "Nombre del jugador 1?";
+        return "«Имя игрока 1?»";
     }
 
     @Override
     public String get_Entrada_Nombre_Jg_Dos() {
-        return "Nombre del jugador 2?";
+        return "«Имя игрока 2?»";
     }
 
     @Override
     public String get_Salida_Error_CaracterInvalido() {
-        return "Caracter invalido";
+        return "Неправильный символ";
     }
 
     @Override
     public String get_Salida_Bienvenida_ModoDeJuego_JgVSJg() {
-        return "Modo de juego: Jugador Vs Jugador...";
+        return "«Режим игры: Игрок против игрока...»";
     }
 
     @Override
     public String get_Salida_Bienvenida_ModoDeJuego_JgVSCPU() {
-        return "Modo de juego: Jugador Vs CPU...";
+        return "«Игровой режим: Игрок против процессора...»";
     }
 
     @Override
     public String get_Salida_Confirmación_CaracterRegistrado() {
-        return "Caracter registrado: ";
+        return "Зарегистрированный персонаж: ";
     }
 
     @Override
     public String get_Salida_InicioJuego() {
-        return "Inicio del juego";
+        return "«Начало игры»";
     }
 
     @Override
     public String get_Salida_FinalizarPrograma() {
-        return "Para finalizar el programa, ponga FIN en cualquier momento";
+        return "«Чтобы завершить программу, нажмите FIN  в любой момент»";
     }
 
     @Override
     public String get_Salida_FinalizandoJuego() {
-        return "Saliendo del juego";
+        return "«Выход из игры»";
     }
 
     @Override
     public String get_Salida_RegresarMenu() {
-        return "Regresando al menu";
+        return "«Возвращение в меню»";
     }
 
     @Override
     public String get_Error_JugadoresIguales() {
-        return "Nombres Jugadores Iguales, porfavor no introduzca los mismos nombres";
+        return "«Одинаковые имена игроков, пожалуйста, не вводите одинаковые имена»";
     }
 
     @Override
     public String get_Entrada_CambiarNombreJugadorV() {
-        return "¿Cual jugador desea cambiar? 1/2";
+        return "«Какого игрока вы хотите изменить? 1/2»";
     }
 
     @Override
     public String get_Error_CaracteresIguales() {
-        return "Caracteres de jugadores iguales, porfavor introduzca diferentes caracteres";
+        return "«Те же персонажи игроков, пожалуйста, введите разные символы»";
     }
 
     @Override
     public String get_Entrada_CambiarCaracterJugador() {
-        return "¿Cual caracter del jugador desea cambiar? 1/2";
+        return "«Какого персонажа игрока вы хотите изменить? 1/2»";
     }
 
     @Override
     public String get_Salida_Empate() {
-        return "Empate";
+        return "Галстук";
     }
 
     @Override
     public String get_Salida_Ganador() {
-        return "Gana!";
+        return "Победить!";
     }
 
     @Override
     public String get_Salida_JugarOtraVez() {
         return """
-                Desea jugar otra vez?
-                1. Si
-                2. No
+                Хотите сыграть еще раз?
+                1. Ага
+                2. Нет
                 """;
     }
 
     @Override
     public String get_Salida_TurnoDe() {
-        return "Turno de: ";
+        return "Поворот: ";
     }
 
     @Override
@@ -158,7 +156,7 @@ public class Español extends Idioma{
         return """
                 //////////////////////////////////////////////
                 
-                A continuación, ponga sus filas y columnas...
+               Затем поместите строки и столбцы...
                 
                 //////////////////////////////////////////////
                 """;
@@ -166,31 +164,31 @@ public class Español extends Idioma{
 
     @Override
     public String get_Entrada_ObtenerFilas() {
-        return "Fila?";
+        return "Ряд?";
     }
 
     @Override
     public String get_Entrada_ObtenerColumnas() {
-        return "Columna?";
+        return "Столбец?";
     }
 
     @Override
     public String get_Salida_CeldaOcupada() {
-        return "La celda esta ocupada";
+        return "«Ячейка занята»";
     }
 
     @Override
     public String get_Salida_SalonFamaVacio() {
-        return "El Salón de la Fama está vacío";
+        return "«Зал славы пуст»";
     }
 
     @Override
     public String get_Salida_SalonFama() {
-        return "Hall of Fame...";
+        return "Зал славы...";
     }
 
     @Override
     public String get_Salida_Victorias() {
-        return " Victorias";
+        return "победа";
     }
 }

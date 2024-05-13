@@ -1,4 +1,6 @@
-package edu.alfonso_depaz.MiJuego1.process;
+package edu.alfonso_depaz.MiJuego1.data;
+import edu.alfonso_depaz.MiJuego1.process.Tablero;
+
 import java.util.Random;
 public class CPU {
     private char Cj_caracter;

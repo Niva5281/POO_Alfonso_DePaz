@@ -1,5 +1,8 @@
 package edu.alfonso_depaz.MiJuego1.process;
 
+import edu.alfonso_depaz.MiJuego1.data.CPU;
+import edu.alfonso_depaz.MiJuego1.data.Jugador;
+import edu.alfonso_depaz.MiJuego1.data.SalonDeLaFama;
 import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodo_RegistroDatos_Jugador1_V1;
 import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodo_RegistroDatos_Jugador2_V1;
 import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodos_Jugadores;
@@ -97,13 +100,15 @@ public class Partida {
         int random = rand.nextInt(2);
         turno = random == 0 ? jugador1.getCj_Caracter() : jugador2.getCj_Caracter();
     }
-    public void realizarJugada(Scanner scanner, CLI cli) {
+    public void realizarJugada_V1(Scanner scanner, CLI cli) {
         Jugador jugadorActual = turno == jugador1.getCj_Caracter() ? jugador1 : jugador2;
         tablero.mostrar();
-        System.out.println("Turno de " + jugadorActual.getCj_Caracter() + " (" + jugadorActual.getCj_Caracter() + ")");
+        System.out.println("Turno de " + jugadorActual.getJg_Nombre()+ " (" + jugadorActual.getCj_Caracter() + ") ");
         if (jugadorActual == jugador1) {
             System.out.println("Choose row and column / Elige fila y columna (e.g., 1 2):"); // Agregamos un mensaje explicativo
+            System.out.println("Fila:");
             int fila = scanner.nextInt();
+            System.out.println("Columna:");
             int columna = scanner.nextInt();
             if (tablero.verificarCasilla(fila, columna)) {
                 tablero.marcarCasilla(fila, columna, jugadorActual.getCj_Caracter());
@@ -116,12 +121,43 @@ public class Partida {
             turno = jugador1.getCj_Caracter();
         }
     }
-    public void jugar(Scanner scanner, CLI cli, Idioma lenguaje) {
+    public void realizarJugada_V2(Scanner scanner, CLI cli,Idioma lenguaje) {
+        Jugador jugadorActual = (turno == jugador1.getCj_Caracter()) ? jugador1 : jugador2;
+        tablero.mostrar();
+        System.out.println(lenguaje.get_Salida_TurnoDe() + jugadorActual.getJg_Nombre()+ " (" + jugadorActual.getCj_Caracter() + ")");
+        if (jugadorActual == jugador1) {
+            System.out.println(lenguaje.get_Salida_EscojerFilasyColumnas()); // Agregamos un mensaje explicativo
+            System.out.println(lenguaje.get_Entrada_ObtenerFilas());
+            int fila = scanner.nextInt();
+            System.out.println(lenguaje.get_Entrada_ObtenerColumnas());
+            int columna = scanner.nextInt();
+            if (tablero.verificarCasilla(fila, columna)) {
+                tablero.marcarCasilla(fila, columna, jugadorActual.getCj_Caracter());
+                turno = jugador2.getCj_Caracter();
+            } else {
+                System.out.println(lenguaje.get_Salida_CeldaOcupada());
+            }
+        }
+        if (jugadorActual == jugador2) {
+            System.out.println(lenguaje.get_Salida_EscojerFilasyColumnas()); // Agregamos un mensaje explicativo
+            System.out.println(lenguaje.get_Entrada_ObtenerFilas());
+            int fila = scanner.nextInt();
+            System.out.println(lenguaje.get_Entrada_ObtenerColumnas());
+            int columna = scanner.nextInt();
+            if (tablero.verificarCasilla(fila, columna)) {
+                tablero.marcarCasilla(fila, columna, jugadorActual.getCj_Caracter());
+                turno = jugador1.getCj_Caracter();
+            } else {
+                System.out.println(lenguaje.get_Salida_CeldaOcupada());
+            }
+        }
+    }
+    public void jugar_JugadorVsCpu(Scanner scanner, CLI cli, Idioma lenguaje) {
         boolean jugarDeNuevo = true;
         while (jugarDeNuevo) {
             inicializar(scanner, lenguaje);
             while (!tablero.verificarGanador()) {
-                realizarJugada(scanner, cli);
+                realizarJugada_V1(scanner, cli);
             }
             tablero.mostrar();
             String ganador = tablero.obtenerGanador();
@@ -131,9 +167,32 @@ public class Partida {
                 Jugador jugadorGanador = ganador.equals(String.valueOf(jugador1.getCj_Caracter())) ? jugador1 : jugador2;
                 jugadorGanador.aumentarVictorias();
                 System.out.println(jugadorGanador.getJg_Nombre() + " " + lenguaje.get_Salida_Ganador());
+                tablero.vaciarCasillas();
             }
             int opcion = cli.mostrarMenuReinicio(lenguaje);
             jugarDeNuevo = opcion == 1;
+        }
+    }
+    public void jugar_JugadorVsJugador(Scanner scanner, CLI cli, Idioma lenguaje) {
+        boolean jugarDeNuevo = true;
+        while (jugarDeNuevo) {
+            inicializar(scanner, lenguaje);
+            while (!tablero.verificarGanador()) {
+                realizarJugada_V2(scanner, cli,lenguaje);
+            }
+            tablero.mostrar();
+            String ganador = tablero.obtenerGanador();
+            if (ganador.equals(lenguaje.get_Salida_Empate())) {
+                System.out.println(lenguaje.get_Salida_Empate());
+            } else {
+                Jugador jugadorGanador = ganador.equals(String.valueOf(jugador1.getCj_Caracter())) ? jugador1 : jugador2;
+                jugadorGanador.aumentarVictorias();
+                System.out.println(jugadorGanador.getJg_Nombre() + " " + lenguaje.get_Salida_Ganador());
+                tablero.vaciarCasillas();
+            }
+            int opcion = cli.mostrarMenuReinicio(lenguaje);
+            jugarDeNuevo = opcion == 1;
+            opcion = SalonDeLaFama.mostrarMenuSalonDeLaFama(scanner);
         }
     }
 }

@@ -25,4 +25,12 @@ public abstract class Idioma {
     public abstract String get_Salida_Empate();
     public abstract String get_Salida_Ganador();
     public abstract String get_Salida_JugarOtraVez();
+    public abstract String get_Salida_TurnoDe();
+    public abstract String get_Salida_EscojerFilasyColumnas();
+    public abstract String get_Entrada_ObtenerFilas();
+    public abstract String get_Entrada_ObtenerColumnas();
+    public abstract String get_Salida_CeldaOcupada();
+    public abstract String get_Salida_SalonFamaVacio();
+    public abstract String get_Salida_SalonFama();
+    public abstract String get_Salida_Victorias();
 }

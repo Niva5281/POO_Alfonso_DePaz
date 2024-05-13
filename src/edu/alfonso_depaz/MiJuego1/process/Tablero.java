@@ -40,6 +40,13 @@ public class Tablero {
     public void marcarCasilla(int fila, int columna, char simbolo) {
         matriz[fila][columna] = simbolo;
     }
+    public void vaciarCasillas(){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matriz[i][j] = ' ';
+            }
+        }
+    }
 
     public void marcarCasillaRandom(char simbolo) {
         Random rand = new Random();

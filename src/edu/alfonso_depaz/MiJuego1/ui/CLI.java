@@ -1,10 +1,9 @@
 package edu.alfonso_depaz.MiJuego1.ui;
 
 import edu.alfonso_depaz.MiJuego1.process.Partida;
-import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodo_RegistroDatos_Jugador1_V1;
+import edu.alfonso_depaz.MiJuego1.data.SalonDeLaFama;
 import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodos_Jugadores;
 
-import java.sql.Wrapper;
 import java.util.Scanner;
 
 public class CLI {
@@ -20,9 +19,9 @@ public class CLI {
         //Se le pregunta al usuario el modo de juego a escojer y se va a ese apartado
         Scanner scanner=new Scanner(System.in);
         Idioma lenguaje=Seleccion_Idioma(scanner);
+        SalonDeLaFama salonDeLaFama = new SalonDeLaFama(5);
         System.out.println(lenguaje.get_Bienvenida());
         System.out.println(lenguaje.get_Entrada_ModoDeJuego());
-        System.out.println(lenguaje.get_Salida_FinalizarPrograma());
         int opcion=scanner.nextInt();
         if(opcion==1){
             Jugador_VS_Jugador(lenguaje);
@@ -37,12 +36,18 @@ public class CLI {
         Idioma lenguaje;
         System.out.println("1. Español");
         System.out.println("2. English");
+        System.out.println("3. Japones");
+        System.out.println("4. Ruso");
         int opcion=scanner.nextInt();
         if(opcion==1){
             lenguaje=new Español();
         }else if(opcion==2){
             lenguaje=new English();
-        }else{
+        } else if (opcion==3) {
+            lenguaje=new Nihongo();
+        } else if (opcion==4){
+            lenguaje=new Русский();
+        } else {
             System.out.println("Language invalid, defaulting to English");
             lenguaje=new English();
         }
@@ -75,7 +80,8 @@ public class CLI {
         CLI cli=new CLI();
         Partida partida=new Partida();
         System.out.println(lenguaje.get_Salida_Bienvenida_ModoDeJuego_JgVSJg());
-        partida.jugar(scanner, cli,lenguaje);
+        System.out.println("****************************************************");
+        partida.jugar_JugadorVsJugador(scanner, cli,lenguaje);
     }
     //Modo de juego de jugador contra CPU donde se utilizan todos los metodos requeridos para su modo de juego
     public static void Jugador_VS_CPU(Idioma lenguaje){
@@ -84,6 +90,6 @@ public class CLI {
         CLI cli=new CLI();
         Partida partida=new Partida();
         System.out.println(lenguaje.get_Salida_Bienvenida_ModoDeJuego_JgVSJg());
-        partida.jugar(scanner, cli,lenguaje);
+        partida.jugar_JugadorVsCpu(scanner, cli,lenguaje);
     }
 }
