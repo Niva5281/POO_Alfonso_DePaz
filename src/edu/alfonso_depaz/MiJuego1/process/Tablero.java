@@ -1,15 +1,29 @@
+/**
+ * Clase que representa el tablero de juego.
+ */
 package edu.alfonso_depaz.MiJuego1.process;
+
 import java.util.Random;
+
 public class Tablero {
+    // Matriz que representa el tablero
     private char[][] matriz;
+    // Variable para almacenar al ganador
     private String ganador;
 
+    /**
+     * Constructor de la clase Tablero.
+     */
     public Tablero() {
         this.matriz = new char[3][3];
         this.ganador = "";
+        // Inicializa el tablero
         inicializar();
     }
 
+    /**
+     * Método para inicializar el tablero con espacios en blanco.
+     */
     public void inicializar() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -18,6 +32,9 @@ public class Tablero {
         }
     }
 
+    /**
+     * Método para mostrar el tablero.
+     */
     public void mostrar() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -33,14 +50,30 @@ public class Tablero {
         }
     }
 
+    /**
+     * Método para verificar si una casilla está vacía.
+     * @param fila Fila de la casilla.
+     * @param columna Columna de la casilla.
+     * @return true si la casilla está vacía, false de lo contrario.
+     */
     public boolean verificarCasilla(int fila, int columna) {
         return matriz[fila][columna] == ' ';
     }
 
+    /**
+     * Método para marcar una casilla con un símbolo.
+     * @param fila Fila de la casilla a marcar.
+     * @param columna Columna de la casilla a marcar.
+     * @param simbolo Símbolo a colocar en la casilla.
+     */
     public void marcarCasilla(int fila, int columna, char simbolo) {
         matriz[fila][columna] = simbolo;
     }
-    public void vaciarCasillas(){
+
+    /**
+     * Método para vaciar todas las casillas del tablero.
+     */
+    public void vaciarCasillas() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 matriz[i][j] = ' ';
@@ -48,6 +81,10 @@ public class Tablero {
         }
     }
 
+    /**
+     * Método para marcar una casilla aleatoria con un símbolo.
+     * @param simbolo Símbolo a colocar en la casilla.
+     */
     public void marcarCasillaRandom(char simbolo) {
         Random rand = new Random();
         int fila, columna;
@@ -58,6 +95,10 @@ public class Tablero {
         matriz[fila][columna] = simbolo;
     }
 
+    /**
+     * Método para verificar si hay un ganador o si hay empate.
+     * @return true si hay un ganador o empate, false de lo contrario.
+     */
     public boolean verificarGanador() {
         // Verificar filas
         for (int i = 0; i < 3; i++) {
@@ -97,6 +138,10 @@ public class Tablero {
         return false;
     }
 
+    /**
+     * Método para obtener al ganador del juego.
+     * @return El nombre del ganador o "Empate".
+     */
     public String obtenerGanador() {
         return ganador;
     }
