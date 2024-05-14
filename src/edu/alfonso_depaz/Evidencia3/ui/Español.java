@@ -1,4 +1,4 @@
-package edu.alfonso_depaz.MiJuego1.ui;
+package edu.alfonso_depaz.Evidencia3.ui;
 
 public class Español extends Idioma{
 

@@ -1,6 +1,4 @@
-package edu.alfonso_depaz.MiJuego1.ui;
-
-import java.util.Scanner;
+package edu.alfonso_depaz.Evidencia3.ui;
 
 public abstract class Idioma {
     /**

@@ -1,7 +1,7 @@
 /**
  * Clase que representa a un jugador en el juego de gato.
  */
-package edu.alfonso_depaz.MiJuego1.data;
+package edu.alfonso_depaz.Evidencia3.data;
 
 public class Jugador {
     private String Jg_Nombre;

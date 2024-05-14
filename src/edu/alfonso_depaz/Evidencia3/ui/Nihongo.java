@@ -1,42 +1,42 @@
-package edu.alfonso_depaz.MiJuego1.ui;
+package edu.alfonso_depaz.Evidencia3.ui;
 
 /**
- * Clase que define los mensajes en inglés para el juego.
+ * Clase que define los mensajes en japonés para el juego.
  */
-public class English extends Idioma{
+public class Nihongo extends Idioma{
 
     /**
-     * Mensaje de bienvenida en inglés.
+     * Mensaje de bienvenida en japonés.
      * @return mensaje de bienvenida
      */
     @Override
     public String get_Bienvenida() {
-        return "Welcome";
+        return """
+               TIC TAC TOE ゲームへようこそ
+               """;
     }
 
     /**
-     * Mensaje que solicita al usuario seleccionar el modo de juego en inglés.
+     * Mensaje que solicita al usuario seleccionar el modo de juego en japonés.
      * @return mensaje de solicitud de modo de juego
      */
     @Override
     public String get_Entrada_ModoDeJuego() {
         return """
-                ///////////////////////////////////////////////////////////
-                
-                Choose your game mode...
-                
-                1. Player vs Player
-                
-                2. Player vs CPU
-                
-                3. Show hall of fame
-                
-                ///////////////////////////////////////////////////////////
-                """;
+               ///////////////////////////////////////////////////////////
+               
+               ゲームモード？
+               
+               1. プレイヤー対プレイヤー
+               
+               2. プレイヤー対 CPU
+               
+               ///////////////////////////////////////////////////////////
+               """;
     }
 
     /**
-     * Muestra la representación de caracteres del juego de Tic Tac Toe en inglés.
+     * Muestra la representación de caracteres del juego de Tic Tac Toe en japonés.
      * @return representación de caracteres del juego
      */
     @Override
@@ -44,7 +44,8 @@ public class English extends Idioma{
         return """
                 ///////////////////////////////////////////////////////////
                 
-                These are the characters for the "Tic Tac Toe"
+                これらは
+                チックタックトゥ」のボックスをマークする文字です"
                 
                 A. X
                 B. O
@@ -62,191 +63,191 @@ public class English extends Idioma{
     }
 
     /**
-     * Mensaje que solicita al usuario ingresar los caracteres para el jugador 1 en inglés.
+     * Mensaje que solicita al usuario ingresar los caracteres para el jugador 1 en japonés.
      * @return mensaje de solicitud de caracteres para el jugador 1
      */
     @Override
     public String get_Entrada_CaracteresDeTicTacToe_Jg_Uno() {
-        return "Characters for the player 1:";
+        return "「プレイヤー 1 のキャラクター:」:";
     }
 
     /**
-     * Mensaje que solicita al usuario ingresar los caracteres para el jugador 2 en inglés.
+     * Mensaje que solicita al usuario ingresar los caracteres para el jugador 2 en japonés.
      * @return mensaje de solicitud de caracteres para el jugador 2
      */
     @Override
     public String get_Entrada_CaracteresDeTicTacToe_Jg_Dos() {
-        return "Characters for the player 2:";
+        return "「プレイヤー 2 のキャラクター:」:";
     }
 
     /**
-     * Mensaje que solicita al usuario ingresar el nombre del jugador 1 en inglés.
+     * Mensaje que solicita al usuario ingresar el nombre del jugador 1 en japonés.
      * @return mensaje de solicitud de nombre del jugador 1
      */
     @Override
     public String get_Entrada_Nombre_Jg_Uno() {
-        return "Name of the player 1?";
+        return "「プレイヤー１の名前は？」";
     }
 
     /**
-     * Mensaje que solicita al usuario ingresar el nombre del jugador 2 en inglés.
+     * Mensaje que solicita al usuario ingresar el nombre del jugador 2 en japonés.
      * @return mensaje de solicitud de nombre del jugador 2
      */
     @Override
     public String get_Entrada_Nombre_Jg_Dos() {
-        return "Name of the player 2";
+        return "「プレイヤー2の名前は？」";
     }
 
     /**
-     * Mensaje de error de caracter inválido en inglés.
+     * Mensaje de error de caracter inválido en japonés.
      * @return mensaje de error de caracter inválido
      */
     @Override
     public String get_Salida_Error_CaracterInvalido() {
-        return "Invalid Character";
+        return "「無効な文字です」";
     }
 
     /**
-     * Mensaje de bienvenida al modo de juego Jugador vs Jugador en inglés.
+     * Mensaje de bienvenida al modo de juego Jugador vs Jugador en japonés.
      * @return mensaje de bienvenida al modo de juego Jugador vs Jugador
      */
     @Override
     public String get_Salida_Bienvenida_ModoDeJuego_JgVSJg() {
-        return "Game mode: Player Vs Player";
+        return "「ゲームモード: プレイヤー vs プレイヤー...」";
     }
 
     /**
-     * Mensaje de bienvenida al modo de juego Jugador vs CPU en inglés.
+     * Mensaje de bienvenida al modo de juego Jugador vs CPU en japonés.
      * @return mensaje de bienvenida al modo de juego Jugador vs CPU
      */
     @Override
     public String get_Salida_Bienvenida_ModoDeJuego_JgVSCPU() {
-        return "Player Vs CPU";
+        return "「ゲームモード: プレイヤー vs CPU...」";
     }
 
     /**
-     * Mensaje de confirmación de caracter registrado en inglés.
+     * Mensaje de confirmación de caracter registrado en japonés.
      * @return mensaje de confirmación de caracter registrado
      */
     @Override
     public String get_Salida_Confirmación_CaracterRegistrado() {
-        return "Character registered: ";
+        return "「登録キャラクター：」";
     }
 
     /**
-     * Mensaje de inicio de juego en inglés.
+     * Mensaje de inicio de juego en japonés.
      * @return mensaje de inicio de juego
      */
     @Override
     public String get_Salida_InicioJuego() {
-        return "Starting game";
+        return "「ゲームの始まり」";
     }
 
     /**
-     * Mensaje para finalizar el programa en inglés.
+     * Mensaje para finalizar el programa en japonés.
      * @return mensaje para finalizar el programa
      */
     @Override
     public String get_Salida_FinalizarPrograma() {
-        return "To exit, use OUT";
+        return "「プログラムを終了するには、いつでもFINを押してください。」";
     }
 
     /**
-     * Mensaje de finalización de juego en inglés.
+     * Mensaje de finalización de juego en japonés.
      * @return mensaje de finalización de juego
      */
     @Override
     public String get_Salida_FinalizandoJuego() {
-        return ";)";
+        return "「ゲームから離れる」";
     }
 
     /**
-     * Mensaje para regresar al menú en inglés.
+     * Mensaje para regresar al menú en japonés.
      * @return mensaje para regresar al menú
      */
     @Override
     public String get_Salida_RegresarMenu() {
-        return "Returning to menu";
+        return "「メニューに戻る」";
     }
 
     /**
-     * Mensaje de error de nombres de jugadores iguales en inglés.
+     * Mensaje de error de nombres de jugadores iguales en japonés.
      * @return mensaje de error de nombres de jugadores iguales
      */
     @Override
     public String get_Error_JugadoresIguales() {
-        return "Same Player Names, please do not enter the same names";
+        return "「同じプレイヤー名です。同じ名前を入力しないでください。」";
     }
 
     /**
-     * Mensaje para cambiar el nombre de un jugador en inglés.
+     * Mensaje para cambiar el nombre de un jugador en japonés.
      * @return mensaje para cambiar el nombre de un jugador
      */
     @Override
     public String get_Entrada_CambiarNombreJugadorV() {
-        return "Which player do you want to change? 1/2";
+        return "「どの選手を変更しますか? 1/2」";
     }
 
     /**
-     * Mensaje de error de caracteres de jugadores iguales en inglés.
+     * Mensaje de error de caracteres de jugadores iguales en japonés.
      * @return mensaje de error de caracteres de jugadores iguales
      */
     @Override
     public String get_Error_CaracteresIguales() {
-        return "Same player characters, please enter different characters";
+        return "「同じプレイヤーのシンボルです。別のシンボルを入力してください」";
     }
 
     /**
-     * Mensaje para cambiar el caracter de un jugador en inglés.
+     * Mensaje para cambiar el caracter de un jugador en japonés.
      * @return mensaje para cambiar el caracter de un jugador
      */
     @Override
     public String get_Entrada_CambiarCaracterJugador() {
-        return "Which player character do you want to change? 1/2";
+        return "「どのプレイヤーキャラクターを変更しますか? 1/2」";
     }
 
     /**
-     * Mensaje de empate en inglés.
+     * Mensaje de empate en japonés.
      * @return mensaje de empate
      */
     @Override
     public String get_Salida_Empate() {
-        return "Draw";
+        return "「ネクタイ」";
     }
 
     /**
-     * Mensaje de victoria en inglés.
+     * Mensaje de victoria en japonés.
      * @return mensaje de victoria
      */
     @Override
     public String get_Salida_Ganador() {
-        return "Won!";
+        return "「勝て」！";
     }
 
     /**
-     * Mensaje que solicita al usuario si desea jugar otra vez en inglés.
-     * @return mensaje de solicitud de jugar otra vez
+     * Mensaje para jugar otra vez en japonés.
+     * @return mensaje para jugar otra vez
      */
     @Override
     public String get_Salida_JugarOtraVez() {
         return """
-                Do you want to play again?
-                1. Yes
-                2. Nop
+                また遊びたい？
+                1. うん
+                2. いいえ
                 """;
     }
 
     /**
-     * Mensaje que solicita al usuario ingresar filas y columnas en inglés.
-     * @return mensaje de solicitud de filas y columnas
+     * Mensaje para indicar el turno del jugador en japonés.
+     * @return mensaje para indicar el turno del jugador
      */
     @Override
     public String get_Salida_TurnoDe() {
-        return "Turn of: ";
+        return "「ターン・オブ・ザ・:」: ";
     }
 
     /**
-     * Mensaje que solicita al usuario ingresar filas y columnas en inglés.
+     * Mensaje para solicitar al usuario que escoja filas y columnas en japonés.
      * @return mensaje de solicitud de filas y columnas
      */
     @Override
@@ -254,63 +255,63 @@ public class English extends Idioma{
         return """
                 //////////////////////////////////////////////
                 
-                Next, put your rows and columns...
+                "次に、行と列を置きます..."
                 
                 //////////////////////////////////////////////
                 """;
     }
 
     /**
-     * Mensaje que solicita al usuario ingresar las filas en inglés.
+     * Mensaje para solicitar al usuario ingresar las filas en japonés.
      * @return mensaje de solicitud de filas
      */
     @Override
     public String get_Entrada_ObtenerFilas() {
-        return "Rows?";
+        return "行？";
     }
 
     /**
-     * Mensaje que solicita al usuario ingresar las columnas en inglés.
+     * Mensaje para solicitar al usuario ingresar las columnas en japonés.
      * @return mensaje de solicitud de columnas
      */
     @Override
     public String get_Entrada_ObtenerColumnas() {
-        return "Columns?";
+        return "カラム？";
     }
 
     /**
-     * Mensaje de celda ocupada en inglés.
+     * Mensaje de celda ocupada en japonés.
      * @return mensaje de celda ocupada
      */
     @Override
     public String get_Salida_CeldaOcupada() {
-        return "The cell is occupied";
+        return "「独房は占拠されています」";
     }
 
     /**
-     * Mensaje que indica que el Salón de la Fama está vacío en inglés.
+     * Mensaje que indica que el Salón de la Fama está vacío en japonés.
      * @return mensaje de Salón de la Fama vacío
      */
     @Override
     public String get_Salida_SalonFamaVacio() {
-        return "The Hall of Fame is empty";
+        return "「殿堂は空だ」";
     }
 
     /**
-     * Mensaje que muestra el Salón de la Fama en inglés.
+     * Mensaje que muestra el Salón de la Fama en japonés.
      * @return mensaje del Salón de la Fama
      */
     @Override
     public String get_Salida_SalonFama() {
-        return "Hall of Fame...";
+        return "殿堂...";
     }
 
     /**
-     * Mensaje que muestra el número de victorias en inglés.
+     * Mensaje que muestra el número de victorias en japonés.
      * @return mensaje del número de victorias
      */
     @Override
     public String get_Salida_Victorias() {
-        return " Victories";
+        return "勝利";
     }
 }

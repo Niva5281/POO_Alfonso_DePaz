@@ -1,8 +1,8 @@
-package edu.alfonso_depaz.MiJuego1.ui;
+package edu.alfonso_depaz.Evidencia3.ui;
 
-import edu.alfonso_depaz.MiJuego1.process.Partida;
-import edu.alfonso_depaz.MiJuego1.data.SalonDeLaFama;
-import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodos_Jugadores;
+import edu.alfonso_depaz.Evidencia3.process.Partida;
+import edu.alfonso_depaz.Evidencia3.data.SalonDeLaFama;
+import edu.alfonso_depaz.Evidencia3.process.metodos.jugadores.Metodos_Jugadores;
 
 import java.util.Scanner;
 

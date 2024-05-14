@@ -1,16 +1,16 @@
 /**
  * Clase que gestiona una partida del juego.
  */
-package edu.alfonso_depaz.MiJuego1.process;
+package edu.alfonso_depaz.Evidencia3.process;
 
-import edu.alfonso_depaz.MiJuego1.data.CPU;
-import edu.alfonso_depaz.MiJuego1.data.Jugador;
-import edu.alfonso_depaz.MiJuego1.data.SalonDeLaFama;
-import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodo_RegistroDatos_Jugador1_V1;
-import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodo_RegistroDatos_Jugador2_V1;
-import edu.alfonso_depaz.MiJuego1.process.metodos.jugadores.Metodos_Jugadores;
-import edu.alfonso_depaz.MiJuego1.ui.CLI;
-import edu.alfonso_depaz.MiJuego1.ui.Idioma;
+import edu.alfonso_depaz.Evidencia3.data.CPU;
+import edu.alfonso_depaz.Evidencia3.data.Jugador;
+import edu.alfonso_depaz.Evidencia3.data.SalonDeLaFama;
+import edu.alfonso_depaz.Evidencia3.process.metodos.jugadores.Metodo_RegistroDatos_Jugador1_V1;
+import edu.alfonso_depaz.Evidencia3.process.metodos.jugadores.Metodo_RegistroDatos_Jugador2_V1;
+import edu.alfonso_depaz.Evidencia3.process.metodos.jugadores.Metodos_Jugadores;
+import edu.alfonso_depaz.Evidencia3.ui.CLI;
+import edu.alfonso_depaz.Evidencia3.ui.Idioma;
 
 import java.util.Random;
 import java.util.Scanner;
