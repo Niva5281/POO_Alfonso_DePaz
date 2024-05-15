@@ -1,7 +1,7 @@
 /**
  * Clase que representa el tablero de juego.
  */
-package edu.alfonso_depaz.MiJuego1.process;
+package edu.alfonso_depaz.Evidencia3.process;
 
 import java.util.Random;
 

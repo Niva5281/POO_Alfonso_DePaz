@@ -1,10 +1,9 @@
 /**
  * Clase que representa el Salón de la Fama del juego.
  */
-package edu.alfonso_depaz.MiJuego1.data;
+package edu.alfonso_depaz.Evidencia3.data;
 
-import edu.alfonso_depaz.MiJuego1.data.Jugador;
-import edu.alfonso_depaz.MiJuego1.ui.Idioma;
+import edu.alfonso_depaz.Evidencia3.ui.Idioma;
 
 import java.util.ArrayList;
 import java.util.Comparator;

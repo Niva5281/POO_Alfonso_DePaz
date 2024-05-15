@@ -1,4 +1,4 @@
-package edu.alfonso_depaz.MiJuego1.ui;
+package edu.alfonso_depaz.Evidencia3.ui;
 
 /**
  * Класс, определяющий сообщения на русском языке для игры.

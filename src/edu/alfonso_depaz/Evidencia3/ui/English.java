@@ -1,4 +1,4 @@
-package edu.alfonso_depaz.MiJuego1.ui;
+package edu.alfonso_depaz.Evidencia3.ui;
 
 /**
  * Clase que define los mensajes en inglés para el juego.
@@ -255,6 +255,8 @@ public class English extends Idioma{
                 //////////////////////////////////////////////
                 
                 Next, put your rows and columns...
+                
+                Chose to 0-2
                 
                 //////////////////////////////////////////////
                 """;

@@ -1,9 +1,9 @@
 /**
  * Clase abstracta que define métodos para guardar nombres de jugadores y caracteres seleccionados por el usuario.
  */
-package edu.alfonso_depaz.MiJuego1.process.metodos.jugadores;
+package edu.alfonso_depaz.Evidencia3.process.metodos.jugadores;
 
-import edu.alfonso_depaz.MiJuego1.ui.Idioma;
+import edu.alfonso_depaz.Evidencia3.ui.Idioma;
 
 public abstract class Metodos_Jugadores {
 

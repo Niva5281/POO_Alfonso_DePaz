@@ -1,4 +1,4 @@
-package edu.alfonso_depaz.MiJuego1.ui;
+package edu.alfonso_depaz.Evidencia3.ui;
 
 public class Español extends Idioma{
 
@@ -255,6 +255,8 @@ public class Español extends Idioma{
                 //////////////////////////////////////////////
                 
                 A continuación, elija sus filas y columnas...
+                
+                Escoja del 0-2
                 
                 //////////////////////////////////////////////
                 """;

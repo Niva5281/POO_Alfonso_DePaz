@@ -1,9 +1,9 @@
 /**
  * Clase que representa al jugador controlado por la computadora en el juego de gato.
  */
-package edu.alfonso_depaz.MiJuego1.data;
+package edu.alfonso_depaz.Evidencia3.data;
 
-import edu.alfonso_depaz.MiJuego1.process.Tablero;
+import edu.alfonso_depaz.Evidencia3.process.Tablero;
 
 import java.util.Random;
 
