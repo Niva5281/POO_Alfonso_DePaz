@@ -256,6 +256,8 @@ public class English extends Idioma{
                 
                 Next, put your rows and columns...
                 
+                Chose to 0-2
+                
                 //////////////////////////////////////////////
                 """;
     }

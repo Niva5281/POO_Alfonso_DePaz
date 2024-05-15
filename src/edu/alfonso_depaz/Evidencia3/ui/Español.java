@@ -256,6 +256,8 @@ public class Español extends Idioma{
                 
                 A continuación, elija sus filas y columnas...
                 
+                Escoja del 0-2
+                
                 //////////////////////////////////////////////
                 """;
     }

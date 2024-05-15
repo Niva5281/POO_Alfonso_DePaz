@@ -56,7 +56,16 @@ public class Partida {
             scanner = new Scanner(System.in);
             System.out.println(lenguaje.get_Error_JugadoresIguales());
             System.out.println(lenguaje.get_Entrada_CambiarNombreJugadorV());
-            int opcion = scanner.nextInt();
+            int opcion;
+            while (!scanner.hasNextInt()) {
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                scanner.next();
+            }
+            opcion=scanner.nextInt();
+            while(opcion>=3){
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                opcion=scanner.nextInt();
+            }
             if (opcion == 1) {
                 metodosJugadores = new Metodo_RegistroDatos_Jugador1_V1();
                 jg1 = CLI.leerJg1(jg1, metodosJugadores, lenguaje);
@@ -84,7 +93,16 @@ public class Partida {
             scanner = new Scanner(System.in);
             System.out.println(lenguaje.get_Error_CaracteresIguales());
             System.out.println(lenguaje.get_Entrada_CambiarCaracterJugador());
-            int opcion = scanner.nextInt();
+            int opcion;
+            while (!scanner.hasNextInt()) {
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                scanner.next();
+            }
+            opcion=scanner.nextInt();
+            while(opcion>=3){
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                opcion=scanner.nextInt();
+            }
             if (opcion == 1) {
                 metodosJugadores = new Metodo_RegistroDatos_Jugador1_V1();
                 cj1 = CLI.leerCj1(cj1, metodosJugadores, lenguaje);
@@ -116,23 +134,40 @@ public class Partida {
      * Método para que el jugador realice una jugada contra la CPU.
      * @param scanner Scanner para leer la entrada del usuario.
      * @param cli Interfaz de línea de comandos.
-     * @param lenguaje Idioma en el que se mostrarán los mensajes.
      */
-    public void realizarJugada_V1(Scanner scanner, CLI cli) {
+    public void realizarJugada_V1(Scanner scanner, CLI cli, Idioma lenguaje) {
         Jugador jugadorActual = turno == jugador1.getCj_Caracter() ? jugador1 : jugador2;
         tablero.mostrar();
-        System.out.println("Turno de " + jugadorActual.getJg_Nombre() + " (" + jugadorActual.getCj_Caracter() + ") ");
+        System.out.println(lenguaje.get_Salida_TurnoDe() + jugadorActual.getJg_Nombre() + " (" + jugadorActual.getCj_Caracter() + ") ");
         if (jugadorActual == jugador1) {
-            System.out.println("Choose row and column / Elige fila y columna (e.g., 1 2):");
-            System.out.println("Row / Fila:");
-            int fila = scanner.nextInt();
-            System.out.println("Column / Columna:");
-            int columna = scanner.nextInt();
+            System.out.println(lenguaje.get_Salida_EscojerFilasyColumnas());
+            System.out.println(lenguaje.get_Entrada_ObtenerFilas());
+            int fila;
+            while (!scanner.hasNextInt()) {
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                scanner.next();
+            }
+            fila=scanner.nextInt();
+            while(fila>=3){
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                fila=scanner.nextInt();
+            }
+            System.out.println(lenguaje.get_Entrada_ObtenerColumnas());
+            int columna;
+            while (!scanner.hasNextInt()) {
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                scanner.next();
+            }
+            columna=scanner.nextInt();
+            while(columna>=3){
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                columna=scanner.nextInt();
+            }
             if (tablero.verificarCasilla(fila, columna)) {
                 tablero.marcarCasilla(fila, columna, jugadorActual.getCj_Caracter());
                 turno = jugador2.getCj_Caracter();
             } else {
-                System.out.println("That cell is already occupied / Esa celda ya está ocupada");
+                System.out.println(lenguaje.get_Salida_CeldaOcupada());
             }
         } else {
             cpu.marcarCasillaRandom(tablero);
@@ -153,9 +188,27 @@ public class Partida {
         if (jugadorActual == jugador1 || jugadorActual == jugador2) {
             System.out.println(lenguaje.get_Salida_EscojerFilasyColumnas());
             System.out.println(lenguaje.get_Entrada_ObtenerFilas());
-            int fila = scanner.nextInt();
+            int fila;
+            while (!scanner.hasNextInt()) {
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                scanner.next();
+            }
+            fila=scanner.nextInt();
+            while(fila>=3){
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                fila=scanner.nextInt();
+            }
             System.out.println(lenguaje.get_Entrada_ObtenerColumnas());
-            int columna = scanner.nextInt();
+            int columna;
+            while (!scanner.hasNextInt()) {
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                scanner.next();
+            }
+            columna=scanner.nextInt();
+            while(columna>=3){
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                columna=scanner.nextInt();
+            }
             if (tablero.verificarCasilla(fila, columna)) {
                 tablero.marcarCasilla(fila, columna, jugadorActual.getCj_Caracter());
                 turno = (jugadorActual == jugador1) ? jugador2.getCj_Caracter() : jugador1.getCj_Caracter();
@@ -176,11 +229,11 @@ public class Partida {
         while (jugarDeNuevo) {
             inicializar(scanner, lenguaje);
             while (!tablero.verificarGanador()) {
-                realizarJugada_V1(scanner, cli);
+                realizarJugada_V1(scanner, cli,lenguaje);
             }
             tablero.mostrar();
             String ganador = tablero.obtenerGanador();
-            if (ganador.equals("Empate")) {
+            if (ganador.equals(lenguaje.get_Salida_Empate())) {
                 System.out.println(lenguaje.get_Salida_Empate());
             } else {
                 Jugador jugadorGanador = ganador.equals(String.valueOf(jugador1.getCj_Caracter())) ? jugador1 : jugador2;
@@ -217,8 +270,16 @@ public class Partida {
                 tablero.vaciarCasillas();
             }
             int opcion = cli.mostrarMenuReinicio(lenguaje);
+            while(opcion>=3){
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                opcion=scanner.nextInt();
+            }
             jugarDeNuevo = opcion == 1;
             opcion = SalonDeLaFama.mostrarMenuSalonDeLaFama(scanner);
+            while(opcion>=3){
+                System.out.println(lenguaje.get_Salida_Error_CaracterInvalido());
+                opcion=scanner.nextInt();
+            }
         }
     }
 }
